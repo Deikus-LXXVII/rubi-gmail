@@ -18,7 +18,7 @@ var provider = mailkit.Provider{
 	ID:          "gmail",
 	Name:        "Gmail",
 	Version:     "v1.0.0",
-	MinRubi:     "v0.6.0",
+	MinRubi:     "v0.6.1",
 	Description: "Read, search and draft Gmail; send after your approval; get notified about replies. Several accounts.",
 	Needs: "Your Gmail address and a Google app password: open myaccount.google.com/apppasswords, name it " +
 		"\"Rubi\" and copy the 16 letters. (Google offers app passwords once 2-Step Verification is on.)",
