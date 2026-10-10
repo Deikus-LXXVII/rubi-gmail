@@ -18,7 +18,7 @@ var provider = mailkit.Provider{
 	ID:          "gmail",
 	Name:        "Gmail",
 	Version:     "v1.0.0",
-	MinRubi:     "v0.6.1",
+	MinRubi:     "v0.10.0",
 	Description: "Read, search and draft Gmail; send after your approval; get notified about replies. Several accounts.",
 	Needs: "Your Gmail address and a Google app password: open myaccount.google.com/apppasswords, name it " +
 		"\"Rubi\" and copy the 16 letters. (Google offers app passwords once 2-Step Verification is on.)",
@@ -36,13 +36,14 @@ var provider = mailkit.Provider{
 	// Google shows app passwords as "abcd efgh ijkl mnop"; any spacing is fine.
 	CleanPassword: func(s string) string { return strings.Join(strings.Fields(s), "") },
 
-	IMAPAddr:   "imap.gmail.com:993",
-	SMTPAddr:   "smtp.gmail.com:587",
-	Drafts:     "[Gmail]/Drafts",
-	Sent:       "[Gmail]/Sent Mail",
-	SavesSent:  true, // Gmail files mail sent over SMTP in Sent Mail by itself
-	Gmail:      true, // Gmail's own search syntax and labels
-	MailDomain: "gmail.com",
+	IMAPAddr:    "imap.gmail.com:993",
+	SMTPAddr:    "smtp.gmail.com:587",
+	Drafts:      "[Gmail]/Drafts",
+	Sent:        "[Gmail]/Sent Mail",
+	SavesSent:   true,                   // Gmail files mail sent over SMTP in Sent Mail by itself
+	Gmail:       true,                   // Gmail's own search syntax and labels
+	AuthServIDs: []string{"google.com"}, // whose sender checks are trusted
+	MailDomain:  "gmail.com",
 	AuthError: "Google rejected the login. Use a Google app password (16 letters from myaccount.google.com/apppasswords), " +
 		"not your Google password; app passwords need 2-Step Verification on. For Google Workspace, your admin may have to allow IMAP",
 }
