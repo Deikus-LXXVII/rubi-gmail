@@ -41,6 +41,7 @@ var provider = mailkit.Provider{
 	Drafts:     "[Gmail]/Drafts",
 	Sent:       "[Gmail]/Sent Mail",
 	SavesSent:  true, // Gmail files mail sent over SMTP in Sent Mail by itself
+	Gmail:      true, // Gmail's own search syntax and labels
 	MailDomain: "gmail.com",
 	AuthError: "Google rejected the login. Use a Google app password (16 letters from myaccount.google.com/apppasswords), " +
 		"not your Google password; app passwords need 2-Step Verification on. For Google Workspace, your admin may have to allow IMAP",
